@@ -12,6 +12,7 @@ from rest_framework.status import HTTP_400_BAD_REQUEST,HTTP_201_CREATED
 # Create your views here.
 class Userviewset(viewsets.ModelViewSet):
     serializer_class = UserSerializer
+    #garima
 
     def create(self, request, *args, **kwargs):
         request_serializer = UserValidationSerializer(data = request.data)
@@ -23,4 +24,5 @@ class Userviewset(viewsets.ModelViewSet):
             return Response(data=serializer.errors,status=HTTP_400_BAD_REQUEST)
         serializer.save()
         return Response(serializer.data,status=HTTP_201_CREATED)
+    #new
 
